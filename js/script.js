@@ -2,7 +2,7 @@ function generateUniqueRandomNumber(array_bombs){
     let check_number = false;
     let randomInt;
     while(!check_number){
-        randomInt = Math.floor(Math.random() * total_cells + 1);
+        randomInt = Math.floor(Math.random() * 100 + 1);
         if(!array_bombs.includes(randomInt)){
             check_number = true;
         }
@@ -56,7 +56,7 @@ function createNewGame(){
     cells_per_row = Math.sqrt(cells_number);
 
     const bombs = generateBombList(NUMBER_OF_BOMBS, cells_number);
-
+    alert("bombs")
     for(let i=1; i<=cells_number; i++){
         let cell = createCell(i, cells_per_row);
         cell.addEventListener("click", function(){
